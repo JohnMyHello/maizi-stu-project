@@ -64,7 +64,9 @@ ROOT_URLCONF = 'maizi_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'maizidb',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': '664390',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -118,9 +120,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,  'static'),
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR,  'templates'),
-)
 
 # define
 AUTH_USER_MODEL = "common.UserProfile"

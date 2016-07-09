@@ -23,7 +23,7 @@ class Ad(models.Model):
     title = models.CharField(u'广告标题', max_length=50)
     description = models.CharField(u'广告描述', max_length=200)
     # 日期存放路径ad/年/月
-    image_url = models.ImageField(u'图片路径', upload_to='ad/%Y/%m')
+    image_url = models.ImageField(u'图片路径', upload_to='static/images/ad/%Y/%m')
     callback_url = models.URLField(u'回调url', null=True, blank=True)
     index = models.IntegerField(u'排列顺序(从小到大)', default=999)
 
@@ -74,7 +74,7 @@ class Links(models.Model):
 
     title =  models.CharField(u'标题', max_length=50)
     description = models.CharField(u'友情链接描述', max_length=200)
-    image_url = models.ImageField(u'图片路径', upload_to='links/%Y/%m',
+    image_url = models.ImageField(u'图片路径', upload_to='static/images/links/%Y/%m',
                                   null=True, blank=True)
     callback_url = models.URLField(u'回调url')
     is_pic = models.BooleanField(u'是否为图片', default=False)
@@ -177,7 +177,7 @@ class CareerCourse(models.Model):
 
     name = models.CharField(u'职业课程名称', max_length=50)
     short_name = models.CharField(u'职业课程英文名称简写', max_length=10, unique=True)
-    image = models.ImageField(u'课程小图标', upload_to='course/%Y/%m')
+    image = models.ImageField(u'课程小图标', upload_to='static/images/course/%Y/%m')
     description = models.TextField(u'文字介绍')
     student_count = models.IntegerField(u'学习人数', default=0)
     market_page_url = models.URLField(u'营销页面地址', blank=True, null=True)
@@ -228,7 +228,7 @@ class Course(models.Model):
     '''
 
     name = models.CharField(u'课程名称',max_length=50)
-    image = models.ImageField(u'课程封面', upload_to='course/%Y/%m')
+    image = models.ImageField(u'课程封面', upload_to='static/images/course/%Y/%m')
     description = models.TextField(u'课程描述')
     is_active = models.BooleanField(u'有效性', default=True)
     date_publish = models.DateTimeField(u'发布时间', auto_now_add=True)

@@ -42,7 +42,7 @@ $(function(){
     $('.show-card').toggleClass('hidden slideInDown');
   })
 
-  //忘记密码
+  //忘记密码most
   $('#btnForgetpsw').on('click', function () {
     $('#loginModal').modal('hide');
   })
